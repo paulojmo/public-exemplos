@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FE19178-C480-4E8D-B6E8-6FC0B5C05EEC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinFormsAppTesteCamadas</RootNamespace>
+    <AssemblyName>WinFormsAppTesteCamadas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuscaCEP\BuscaCEPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscaCEP\BuscaCEPForm.Designer.cs">
+      <DependentUpon>BuscaCEPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Banco\BancoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Banco\BancoForm.Designer.cs">
+      <DependentUpon>BancoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Banco\BancoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Banco\BancoLista.Designer.cs">
+      <DependentUpon>BancoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\ComboLista.cs" />
+    <Compile Include="Mensagens\AguardeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensagens\AguardeForm.Designer.cs">
+      <DependentUpon>AguardeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens\MensagemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensagens\MensagemForm.Designer.cs">
+      <DependentUpon>MensagemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens\TipoMensagemEnum.cs" />
+    <Compile Include="Principal\MenuPrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\MenuPrincipalForm.Designer.cs">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuscaCEP\BuscaCEPForm.resx">
+      <DependentUpon>BuscaCEPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\BancosLista.resx" />
+    <EmbeddedResource Include="Cadastros\Banco\BancoForm.resx">
+      <DependentUpon>BancoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Banco\BancoLista.resx">
+      <DependentUpon>BancoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensagens\AguardeForm.resx">
+      <DependentUpon>AguardeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensagens\MensagemForm.resx">
+      <DependentUpon>MensagemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\MenuPrincipalForm.resx">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Negocio\Sistema.Negocio.csproj">
+      <Project>{84c53247-b58c-41fc-943f-4949509f3089}</Project>
+      <Name>Sistema.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Servico\Sistema.Servico.csproj">
+      <Project>{19a47ade-228d-467c-8c36-d95d1088e794}</Project>
+      <Name>Sistema.Servico</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
