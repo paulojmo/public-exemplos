@@ -1,2 +1,2 @@
 # public-exemplos
-repositório para estudos 
+repositório para exemplos de estudos realizados
