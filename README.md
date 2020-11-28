@@ -1,2 +1,2 @@
 # public-exemplos
-repositório para estudos da ferramenta 
+repositório para estudos 
