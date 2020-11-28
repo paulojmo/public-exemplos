@@ -45,6 +45,7 @@ namespace ModuloCadastros
             // 
             this.panelDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelDataGrid.Controls.Add(this.dataGridView1);
+            this.panelDataGrid.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             // 
             // buttonVoltar
             // 
