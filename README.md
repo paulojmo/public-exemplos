@@ -1,2 +1,2 @@
 # public-exemplos
-repositório publico para exemplos 
+repositório para estudos da ferramenta 
