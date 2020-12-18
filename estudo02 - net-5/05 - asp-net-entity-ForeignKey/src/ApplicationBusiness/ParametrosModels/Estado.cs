@@ -20,7 +20,6 @@ namespace ApplicationBusiness.ParametrosModels
         [StringLength(02)]
         public string Sigla { get; set; }
 
-        //[ForeignKey("tgpais")]
         [Display(Name = "País")]
         public int PaisID { get; set; }
         [ForeignKey("PaisID")]
