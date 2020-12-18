@@ -27,6 +27,6 @@ namespace ApplicationBusiness.CadastrosModels
         public string Fantasia { get; set; }
 
         [Display(Name = "Empresa ID")]
-        public string EmpresaId { get; set; }
+        public string IdEmpresa { get; set; }
     }
 }

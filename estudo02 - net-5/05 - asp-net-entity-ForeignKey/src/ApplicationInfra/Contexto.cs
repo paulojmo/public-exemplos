@@ -1,4 +1,5 @@
-﻿using ApplicationBusiness.ParametrosModels;
+﻿using ApplicationBusiness.CadastrosModels;
+using ApplicationBusiness.ParametrosModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationInfra
@@ -14,5 +15,6 @@ namespace ApplicationInfra
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Pais> Pais { get; set; }
         public DbSet<Estado> Estado { get; set; }
+        public DbSet<Banco> Banco { get; set; }
     }
 }
