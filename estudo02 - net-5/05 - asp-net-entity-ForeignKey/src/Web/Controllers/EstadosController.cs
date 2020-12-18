@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ApplicationBusiness.ParametrosModels;
+using ApplicationInfra;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ApplicationBusiness.ParametrosModels;
-using ApplicationInfra;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Web.Controllers
 {
@@ -48,7 +46,7 @@ namespace Web.Controllers
         // GET: Estados/Create
         public IActionResult Create()
         {
-            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "ID");
+            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "Nome");
             return View();
         }
 
@@ -65,7 +63,7 @@ namespace Web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "ID", estado.PaisID);
+            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "Nome", estado.PaisID);                               
             return View(estado);
         }
 
@@ -82,7 +80,7 @@ namespace Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "ID", estado.PaisID);
+            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "Nome", estado.PaisID);
             return View(estado);
         }
 
@@ -118,7 +116,7 @@ namespace Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "ID", estado.PaisID);
+            ViewData["PaisID"] = new SelectList(_context.Pais, "ID", "Nome", estado.PaisID);
             return View(estado);
         }
 
