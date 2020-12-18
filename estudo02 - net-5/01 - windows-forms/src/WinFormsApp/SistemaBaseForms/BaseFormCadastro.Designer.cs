@@ -34,9 +34,9 @@ namespace SistemaBaseForms
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.CancelarButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.ConfirmarButton = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -68,27 +68,27 @@ namespace SistemaBaseForms
             // 
             // panelButtons
             // 
-            this.panelButtons.Controls.Add(this.button2);
-            this.panelButtons.Controls.Add(this.button1);
+            this.panelButtons.Controls.Add(this.CancelarButton);
+            this.panelButtons.Controls.Add(this.ConfirmarButton);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelButtons.Location = new System.Drawing.Point(0, 318);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(784, 45);
             this.panelButtons.TabIndex = 1;
             // 
-            // button2
+            // CancelarButton
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ImageKey = "registro;cancelar-48.png";
-            this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(484, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 45);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancelar";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.CancelarButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelarButton.ImageKey = "registro;cancelar-48.png";
+            this.CancelarButton.ImageList = this.imageList1;
+            this.CancelarButton.Location = new System.Drawing.Point(484, 0);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(150, 45);
+            this.CancelarButton.TabIndex = 1;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.CancelarButton.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -98,19 +98,19 @@ namespace SistemaBaseForms
             this.imageList1.Images.SetKeyName(0, "registro.confirmar-48.png");
             this.imageList1.Images.SetKeyName(1, "registro;cancelar-48.png");
             // 
-            // button1
+            // ConfirmarButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageKey = "registro.confirmar-48.png";
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(634, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Confirmar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.ConfirmarButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ConfirmarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmarButton.ImageKey = "registro.confirmar-48.png";
+            this.ConfirmarButton.ImageList = this.imageList1;
+            this.ConfirmarButton.Location = new System.Drawing.Point(634, 0);
+            this.ConfirmarButton.Name = "ConfirmarButton";
+            this.ConfirmarButton.Size = new System.Drawing.Size(150, 45);
+            this.ConfirmarButton.TabIndex = 0;
+            this.ConfirmarButton.Text = "Confirmar";
+            this.ConfirmarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ConfirmarButton.UseVisualStyleBackColor = true;
             // 
             // panelTitulo
             // 
@@ -159,7 +159,7 @@ namespace SistemaBaseForms
         public System.Windows.Forms.Panel panelButtons;
         public System.Windows.Forms.Panel panelTitulo;
         public System.Windows.Forms.Label labelTitulo;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button CancelarButton;
+        public System.Windows.Forms.Button ConfirmarButton;
     }
 }

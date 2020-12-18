@@ -61,15 +61,15 @@ namespace BusinessCadastros
                 string cQryBase = "SELECT * FROM dcclasse ";
                 DynamicParameters parameter = new DynamicParameters();
 
-                switch ((FiltroClasseEnum)idFiltro)
+                switch ((ClasseEnums)idFiltro)
                 {
-                    case FiltroClasseEnum.ID:
+                    case ClasseEnums.ID:
                         cQryBase += "WHERE ID = @pId ";
                         cQryBase += "ORDER BY ID ";
                         parameter.Add("@pId", Valor.ToInt32());
                         break;
 
-                    case FiltroClasseEnum.Nome:
+                    case ClasseEnums.Nome:
                         cQryBase += "WHERE NOME ilike @pNome ";
                         cQryBase += "ORDER BY NOME ";
                         parameter.Add("@pNome", "%" + Valor + "%");

@@ -29,7 +29,7 @@ namespace ModuloCadastros
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpresaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,13 +38,13 @@ namespace ModuloCadastros
             this.panelDataGrid.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDataGrid
             // 
             this.panelDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDataGrid.Controls.Add(this.dataGridView1);
+            this.panelDataGrid.Controls.Add(this.dataGridView);
             this.panelDataGrid.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             // 
             // buttonVoltar
@@ -65,36 +65,39 @@ namespace ModuloCadastros
             this.buttonFiltrar.Location = new System.Drawing.Point(635, 22);
             this.buttonFiltrar.Size = new System.Drawing.Size(110, 27);
             // 
-            // button4
+            // ExcluirButton
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
+            this.ExcluirButton.FlatAppearance.BorderSize = 0;
+            this.ExcluirButton.Click += new System.EventHandler(this.ExcluirButton_Click);
             // 
-            // button3
+            // EditarButton
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
+            this.EditarButton.FlatAppearance.BorderSize = 0;
+            this.EditarButton.Click += new System.EventHandler(this.EditarButton_Click);
             // 
-            // button1
+            // NovoButton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
+            this.NovoButton.FlatAppearance.BorderSize = 0;
+            this.NovoButton.Click += new System.EventHandler(this.NovoButton_Click);
             // 
-            // button2
+            // OpcoesButton
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
+            this.OpcoesButton.FlatAppearance.BorderSize = 0;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nome,
             this.EmpresaId});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 317);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 25;
+            this.dataGridView.Size = new System.Drawing.Size(796, 317);
+            this.dataGridView.TabIndex = 0;
             // 
             // ID
             // 
@@ -132,14 +135,14 @@ namespace ModuloCadastros
             this.panelButtons.ResumeLayout(false);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmpresaId;

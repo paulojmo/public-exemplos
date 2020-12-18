@@ -40,11 +40,11 @@ namespace SistemaBaseForms
             this.textBoxFiltro = new System.Windows.Forms.TextBox();
             this.comboBoxOpcaoFiltro = new System.Windows.Forms.ComboBox();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ExcluirButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.EditarButton = new System.Windows.Forms.Button();
+            this.NovoButton = new System.Windows.Forms.Button();
+            this.OpcoesButton = new System.Windows.Forms.Button();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.labelTitulo = new System.Windows.Forms.Label();
@@ -135,10 +135,10 @@ namespace SistemaBaseForms
             // 
             // panelButtons
             // 
-            this.panelButtons.Controls.Add(this.button4);
-            this.panelButtons.Controls.Add(this.button3);
-            this.panelButtons.Controls.Add(this.button1);
-            this.panelButtons.Controls.Add(this.button2);
+            this.panelButtons.Controls.Add(this.ExcluirButton);
+            this.panelButtons.Controls.Add(this.EditarButton);
+            this.panelButtons.Controls.Add(this.NovoButton);
+            this.panelButtons.Controls.Add(this.OpcoesButton);
             this.panelButtons.Controls.Add(this.buttonVoltar);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelButtons.Location = new System.Drawing.Point(0, 408);
@@ -146,20 +146,20 @@ namespace SistemaBaseForms
             this.panelButtons.Size = new System.Drawing.Size(798, 40);
             this.panelButtons.TabIndex = 1;
             // 
-            // button4
+            // ExcluirButton
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ImageKey = "registro.excluir-48.png";
-            this.button4.ImageList = this.imageList1;
-            this.button4.Location = new System.Drawing.Point(464, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 40);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Excluir";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.ExcluirButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ExcluirButton.FlatAppearance.BorderSize = 0;
+            this.ExcluirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcluirButton.ImageKey = "registro.excluir-48.png";
+            this.ExcluirButton.ImageList = this.imageList1;
+            this.ExcluirButton.Location = new System.Drawing.Point(464, 0);
+            this.ExcluirButton.Name = "ExcluirButton";
+            this.ExcluirButton.Size = new System.Drawing.Size(116, 40);
+            this.ExcluirButton.TabIndex = 5;
+            this.ExcluirButton.Text = "Excluir";
+            this.ExcluirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ExcluirButton.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -172,50 +172,50 @@ namespace SistemaBaseForms
             this.imageList1.Images.SetKeyName(3, "registro.editar-48.png");
             this.imageList1.Images.SetKeyName(4, "registro.excluir-48.png");
             // 
-            // button3
+            // EditarButton
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ImageKey = "registro.editar-48.png";
-            this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(348, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 40);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Editar";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.EditarButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.EditarButton.FlatAppearance.BorderSize = 0;
+            this.EditarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditarButton.ImageKey = "registro.editar-48.png";
+            this.EditarButton.ImageList = this.imageList1;
+            this.EditarButton.Location = new System.Drawing.Point(348, 0);
+            this.EditarButton.Name = "EditarButton";
+            this.EditarButton.Size = new System.Drawing.Size(116, 40);
+            this.EditarButton.TabIndex = 4;
+            this.EditarButton.Text = "Editar";
+            this.EditarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.EditarButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // NovoButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageKey = "registro.adicionar-48.png";
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(232, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Novo";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.NovoButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NovoButton.FlatAppearance.BorderSize = 0;
+            this.NovoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NovoButton.ImageKey = "registro.adicionar-48.png";
+            this.NovoButton.ImageList = this.imageList1;
+            this.NovoButton.Location = new System.Drawing.Point(232, 0);
+            this.NovoButton.Name = "NovoButton";
+            this.NovoButton.Size = new System.Drawing.Size(116, 40);
+            this.NovoButton.TabIndex = 3;
+            this.NovoButton.Text = "Novo";
+            this.NovoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.NovoButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // OpcoesButton
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ImageKey = "form.configuracoes-48.png";
-            this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(116, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Opções";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.OpcoesButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.OpcoesButton.FlatAppearance.BorderSize = 0;
+            this.OpcoesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpcoesButton.ImageKey = "form.configuracoes-48.png";
+            this.OpcoesButton.ImageList = this.imageList1;
+            this.OpcoesButton.Location = new System.Drawing.Point(116, 0);
+            this.OpcoesButton.Name = "OpcoesButton";
+            this.OpcoesButton.Size = new System.Drawing.Size(116, 40);
+            this.OpcoesButton.TabIndex = 2;
+            this.OpcoesButton.Text = "Opções";
+            this.OpcoesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.OpcoesButton.UseVisualStyleBackColor = true;
             // 
             // buttonVoltar
             // 
@@ -287,9 +287,9 @@ namespace SistemaBaseForms
         public System.Windows.Forms.ComboBox comboBoxOpcaoFiltro;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button ExcluirButton;
+        public System.Windows.Forms.Button EditarButton;
+        public System.Windows.Forms.Button NovoButton;
+        public System.Windows.Forms.Button OpcoesButton;
     }
 }

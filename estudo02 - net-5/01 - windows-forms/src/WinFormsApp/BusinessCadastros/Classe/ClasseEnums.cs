@@ -3,7 +3,7 @@
     /// <summary>
     /// Classe com Enum para o Filtro da Lista das Classes
     /// </summary>
-    public enum FiltroClasseEnum
+    public enum ClasseEnums
     {
         Nome = 0,
         ID = 1

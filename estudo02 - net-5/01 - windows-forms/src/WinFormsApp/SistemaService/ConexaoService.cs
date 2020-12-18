@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace SistemaService
+namespace SistemaServices
 {
     public static class ConexaoService
     {
