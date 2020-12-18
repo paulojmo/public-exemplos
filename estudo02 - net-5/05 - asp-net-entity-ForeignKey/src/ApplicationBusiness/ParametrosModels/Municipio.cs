@@ -16,6 +16,8 @@ namespace ApplicationBusiness.ParametrosModels
         public string Nome { get; set; }
 
         [Display(Name = "Estado")]
+        public int UfID { get; set; }        
+        [ForeignKey("UfID")]            
         public Estado Estado { get; set; }
 
     }

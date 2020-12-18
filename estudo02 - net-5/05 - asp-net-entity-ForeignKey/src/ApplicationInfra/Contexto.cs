@@ -15,6 +15,7 @@ namespace ApplicationInfra
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Pais> Pais { get; set; }
         public DbSet<Estado> Estado { get; set; }
+        public DbSet<Municipio> Municipio { get; set; }
         public DbSet<Banco> Banco { get; set; }
     }
 }
