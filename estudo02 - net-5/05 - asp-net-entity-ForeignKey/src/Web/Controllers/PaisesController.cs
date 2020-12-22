@@ -22,7 +22,7 @@ namespace Web.Controllers
         // GET: Paises
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pais.ToListAsync());
+            return View(await _context.Pais.OrderBy(s => s.Nome).ToListAsync());
         }
 
         // GET: Paises/Details/5

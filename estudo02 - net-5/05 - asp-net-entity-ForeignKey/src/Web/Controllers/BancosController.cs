@@ -22,7 +22,8 @@ namespace Web.Controllers
         // GET: Bancos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Banco.ToListAsync());
+            var banco = await _context.Banco.OrderBy(s => s.Fantasia).ToListAsync();
+            return View(banco);
         }
 
         // GET: Bancos/Details/5

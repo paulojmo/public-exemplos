@@ -1,6 +1,6 @@
-﻿using ApplicationBusiness.CadastrosModels;
+﻿using Microsoft.EntityFrameworkCore;
 using ApplicationBusiness.ParametrosModels;
-using Microsoft.EntityFrameworkCore;
+using ApplicationBusiness.CadastrosModels;
 
 namespace ApplicationInfra
 {

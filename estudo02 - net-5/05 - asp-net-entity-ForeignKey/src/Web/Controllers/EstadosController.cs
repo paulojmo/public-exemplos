@@ -21,7 +21,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Estado.Include(e => e.Pais);
-            return View(await contexto.ToListAsync());
+            return View(await contexto.OrderBy(s => s.Nome).ToListAsync());
         }
 
         // GET: Estados/Details/5

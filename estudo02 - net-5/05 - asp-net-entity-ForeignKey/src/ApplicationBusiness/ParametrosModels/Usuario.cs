@@ -8,6 +8,7 @@ namespace ApplicationBusiness.ParametrosModels
     public class Usuario : BaseModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "ID")]
         public int ID { get; set; }
 

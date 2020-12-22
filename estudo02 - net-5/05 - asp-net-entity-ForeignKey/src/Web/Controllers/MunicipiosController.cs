@@ -23,7 +23,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Municipio.Include(m => m.Estado);
-            return View(await contexto.ToListAsync());
+            return View(await contexto.OrderBy(s => s.Nome).ToListAsync());
         }
 
         // GET: Municipios/Details/5
@@ -34,7 +34,7 @@ namespace Web.Controllers
                 return NotFound();
             }
 
-            var municipio = await _context.Municipio.Include(m => m.Estado)
+            var municipio = await _context.Municipio.Include(m => m.Estado).Include(m => m.Estado.Pais)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (municipio == null)
             {
@@ -129,9 +129,7 @@ namespace Web.Controllers
                 return NotFound();
             }
 
-            var municipio = await _context.Municipio
-                .Include(m => m.Estado)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var municipio = await _context.Municipio.Include(m => m.Estado).FirstOrDefaultAsync(m => m.ID == id);
             if (municipio == null)
             {
                 return NotFound();

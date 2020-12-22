@@ -22,7 +22,8 @@ namespace Web.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Usuario.ToListAsync());
+            List<Usuario> usuario = await _context.Usuario.OrderBy(s => s.Nome).ToListAsync();
+            return View(usuario);
         }
 
         // GET: Usuarios/Details/5
@@ -33,8 +34,7 @@ namespace Web.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuario
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var usuario = await _context.Usuario.FirstOrDefaultAsync(m => m.ID == id);
             if (usuario == null)
             {
                 return NotFound();
