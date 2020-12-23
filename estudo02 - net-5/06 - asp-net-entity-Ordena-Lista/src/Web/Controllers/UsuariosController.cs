@@ -20,9 +20,40 @@ namespace Web.Controllers
         }
 
         // GET: Usuarios
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string OrdenaParm)
         {
-            List<Usuario> usuario = await _context.Usuario.OrderBy(s => s.Nome).ToListAsync();
+            ViewBag.IDOrdenaParm = "ID";
+            ViewBag.EMailOrdenaParm = "email";
+            ViewBag.NomeOrdenaParm = "nome";
+            ViewBag.TipoOrdenaParm = "tipo";
+
+            //List<Usuario> usuario = await _context.Usuario.OrderBy(s => s.Nome).ToListAsync();
+
+            var contexto = _context.Usuario;
+
+            List<Usuario> usuario;
+
+            switch (OrdenaParm)
+            {
+                case "ID":
+                    usuario = await contexto.OrderBy(s => s.ID).ToListAsync();
+                    break;
+                case "email":
+                    usuario = await contexto.OrderBy(s => s.Email).ToListAsync();
+                    break;
+                case "nome":
+                    usuario = await contexto.OrderBy(s => s.Nome).ToListAsync();
+                    break;
+                case "tipo":
+                    usuario = await contexto.OrderBy(s => s.Tipo).ToListAsync();
+                    break;
+                default:
+                    usuario = await contexto.OrderBy(s => s.Nome).ToListAsync();
+                    break;
+            }
+            //List<Usuario> usuario = await _context.Usuario.OrderBy(s => s.Nome).ToListAsync();
+            //return View(usuario);
+
             return View(usuario);
         }
 

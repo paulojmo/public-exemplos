@@ -20,9 +20,29 @@ namespace Web.Controllers
         }
 
         // GET: Paises
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string OrdenaParm)
         {
-            return View(await _context.Pais.OrderBy(s => s.Nome).ToListAsync());
+            ViewBag.NameOrdenaParm = "nome";
+            ViewBag.SiglaOrdenaParm = "sigla";
+            
+            var contexto = _context.Pais.Include(e => e.Estados);
+
+            List<Pais> pais;
+
+            switch (OrdenaParm)
+            {
+                case "nome":
+                    pais = await contexto.OrderBy(s => s.Nome).ToListAsync();
+                    break;
+                case "sigla":
+                    pais = await contexto.OrderBy(s => s.Sigla).ToListAsync();
+                    break;
+                default:
+                    pais = await contexto.OrderBy(s => s.Nome).ToListAsync();
+                    break;
+            }
+            //return View(await _context.Pais.OrderBy(s => s.Nome).ToListAsync());
+            return View(pais);
         }
 
         // GET: Paises/Details/5

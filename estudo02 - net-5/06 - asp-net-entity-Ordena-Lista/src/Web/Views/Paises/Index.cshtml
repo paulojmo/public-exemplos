@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ApplicationBusiness.ParametrosModels.Pais firstDados = Model.ToList().FirstOrDefault();
 }
 
 <h1>Index</h1>
@@ -14,10 +15,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                <a asp-area="" asp-controller="Paises" asp-action="Index" asp-route-OrdenaParm=@ViewBag.NomeOrdenaParm>
+                    <label asp-for="@firstDados.Nome"></label>
+                </a>
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sigla)
+                <a asp-area="" asp-controller="Paises" asp-action="Index" asp-route-OrdenaParm=@ViewBag.SiglaOrdenaParm>
+                    <label asp-for="@firstDados.Sigla"></label>
+                </a>
+                
             </th>
             <th></th>
         </tr>

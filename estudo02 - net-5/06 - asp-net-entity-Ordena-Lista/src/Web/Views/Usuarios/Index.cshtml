@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    ApplicationBusiness.ParametrosModels.Usuario firstDados = Model.ToList().FirstOrDefault();
 }
 
 <h1>Index</h1>
@@ -13,21 +14,36 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                <a asp-area="" asp-controller="Usuarios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.IDOrdenaParm>
+                    <label asp-for="@firstDados.ID"></label>
+                </a>
+                
             </th>
             <th>
+                <a asp-area="" asp-controller="Usuarios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.EMailOrdenaParm>
+                    <label asp-for="@firstDados.Email"></label>
+                </a>
+                
+            </th>
+            <th>                
                 @Html.DisplayNameFor(model => model.Senha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                <a asp-area="" asp-controller="Usuarios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.NomeOrdenaParm>
+                    <label asp-for="@firstDados.Nome"></label>
+                </a>
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tipo)
+                <a asp-area="" asp-controller="Usuarios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.TipoOrdenaParm>
+                    <label asp-for="@firstDados.Tipo"></label>
+                </a>
+                
             </th>
-            <th>
+            <th>                
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
-            <th>
+            <th>                
                 @Html.DisplayNameFor(model => model.ExpiraDias)
             </th>
             <th></th>
@@ -36,6 +52,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>

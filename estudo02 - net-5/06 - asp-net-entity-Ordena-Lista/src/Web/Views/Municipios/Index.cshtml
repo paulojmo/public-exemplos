@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    ApplicationBusiness.ParametrosModels.Municipio firstDados = Model.ToList().FirstOrDefault();
 }
 
 <h1>Index</h1>
@@ -13,10 +14,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                <a asp-area="" asp-controller="Municipios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.IDOrdenaParm>
+                    <label asp-for="@firstDados.ID"></label>
+                </a>
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estado.Sigla)
+                <a asp-area="" asp-controller="Municipios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.NomeOrdenaParm>
+                    <label asp-for="@firstDados.Nome"></label>
+                </a>
+
+            </th>
+            <th>
+                <a asp-area="" asp-controller="Municipios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.EstadoOrdenaParm>
+                    <label asp-for="@firstDados.Estado.Sigla"></label>
+                </a>
+                
+            </th>
+            <th>
+                <a asp-area="" asp-controller="Municipios" asp-action="Index" asp-route-OrdenaParm=@ViewBag.EstadoOrdenaParm>
+                    <label asp-for="@firstDados.Estado.Pais.Nome"></label>
+                </a>
+                
             </th>
             <th></th>
         </tr>
@@ -25,10 +44,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Estado.Sigla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado.Pais.Nome)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

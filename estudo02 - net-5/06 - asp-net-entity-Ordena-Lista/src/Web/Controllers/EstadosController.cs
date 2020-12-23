@@ -3,6 +3,7 @@ using ApplicationInfra;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,10 +19,39 @@ namespace Web.Controllers
         }
 
         // GET: Estados
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string OrdenaParm)
         {
+            ViewBag.IDOrdenaParm = "ID";
+            ViewBag.NameOrdenaParm = "nome";
+            ViewBag.SiglaOrdenaParm = "sigla";
+            ViewBag.PaisOrdenaParm = "pais";
+
             var contexto = _context.Estado.Include(e => e.Pais);
-            return View(await contexto.OrderBy(s => s.Nome).ToListAsync());
+            
+            List<Estado> estado;
+
+            switch (OrdenaParm)
+            {
+                case "ID":
+                    estado = await contexto.OrderBy(s => s.ID).ToListAsync();
+                    break;
+                case "nome":
+                    estado = await contexto.OrderBy(s => s.Nome).ToListAsync();
+                    break;
+                case "sigla":
+                    estado = await contexto.OrderBy(s => s.Sigla).ToListAsync();
+                    break;
+                case "pais":
+                    estado = await contexto.OrderBy(s => s.Pais.Nome).ToListAsync();
+                    break;
+                default:
+                    estado = await contexto.OrderBy(s => s.Nome).ToListAsync();
+                    break;
+            }
+
+            //var contexto = _context.Estado.Include(e => e.Pais);
+            //return View(await contexto.OrderBy(s => s.Nome).ToListAsync());
+            return View(estado);
         }
 
         // GET: Estados/Details/5

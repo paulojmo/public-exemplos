@@ -20,10 +20,38 @@ namespace Web.Controllers
         }
 
         // GET: Municipios
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string OrdenaParm)
         {
-            var contexto = _context.Municipio.Include(m => m.Estado);
-            return View(await contexto.OrderBy(s => s.Nome).ToListAsync());
+
+            ViewBag.IDOrdenaParm = "ID";
+            ViewBag.NameOrdenaParm = "nome";
+            ViewBag.EstadoOrdenaParm = "estado";
+            ViewBag.PaisOrdenaParm = "pais";
+
+            var contexto = _context.Municipio.Include(m => m.Estado).Include(m => m.Estado.Pais);
+
+            List<Municipio> municipio;
+
+            switch (OrdenaParm)
+            {
+                case "ID":
+                    municipio = await contexto.OrderBy(m => m.ID).ToListAsync();
+                    break;
+                case "nome":
+                    municipio = await contexto.OrderBy(m => m.Nome).ToListAsync();
+                    break;
+                case "estado":
+                    municipio = await contexto.OrderBy(m => m.Estado.Sigla).ToListAsync();
+                    break;
+                case "pais":
+                    municipio = await contexto.OrderBy(m => m.Estado.Pais.Nome).ToListAsync();
+                    break;
+                default:
+                    municipio = await contexto.OrderBy(m => m.Nome).ToListAsync();
+                    break;
+            }
+            //return View(await contexto.OrderBy(s => s.Nome).ToListAsync());
+            return View(municipio);
         }
 
         // GET: Municipios/Details/5
