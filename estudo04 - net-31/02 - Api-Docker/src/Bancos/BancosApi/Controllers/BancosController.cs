@@ -1,4 +1,5 @@
 ﻿using BancosAPI.Servico.Interfaces;
+using BancosAPI.Servico.Requisicoes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,13 +23,10 @@ namespace BancosAPI.Controllers
             // injeção de dependencia do SERVICE la da camada SERVIÇO  
             //***********************************************************************************
             _servico = appServico;
-        }
-
+        }        
 
         [HttpGet]
         [Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(typeof(PaginacaoResposta<BancoResposta>), StatusCodes.Status200OK)]
-        //[ProducesResponseType(typeof(Resultado), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetTodos()
         {
             var list = await _servico.GetLista();
@@ -48,5 +46,20 @@ namespace BancosAPI.Controllers
             return Ok(resultado);
         }
 
+        [HttpDelete("{id:long}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Deletar([FromRoute] string id)
+        {
+            var resultado = await _servico.Delete(id); //Async
+            if (resultado == 0 )
+            {
+             
+                   return NotFound(resultado);
+             
+            }
+
+            return Ok(resultado);
+        }
     }
 }

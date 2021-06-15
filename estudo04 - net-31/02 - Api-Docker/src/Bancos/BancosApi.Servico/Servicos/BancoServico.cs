@@ -37,6 +37,9 @@ namespace BancosAPI.Servico.Servicos
 
         }
 
+        /// <summary>
+        /// retorna a lista de bancos
+        /// </summary>
         public async Task<IEnumerable<BancoResposta>> GetLista()
         {
             // usar o repositorio para realizar a operação
@@ -48,17 +51,7 @@ namespace BancosAPI.Servico.Servicos
             return _mapper.Map<IEnumerable<BancoResposta>>(result);
         }
 
-
-        public async Task<IEnumerable<BancoResposta>> GetLista(string CampoParaFiltro, string ValorParaFiltro)
-        {
-            // usar o repositorio para realizar a operação
-            //***********************************************************************************************
-            var result = await _bancoRepository.GetLista(CampoParaFiltro, ValorParaFiltro);
-
-            // mapear o RESULT para a ViewModel 
-            //***********************************************************************************************
-            return _mapper.Map<IEnumerable<BancoResposta>>(result);
-        }
+   
 
         public async Task<BancoResposta> GetID(string codigo)
         {
@@ -72,7 +65,7 @@ namespace BancosAPI.Servico.Servicos
 
         }
 
-        public int Add(BancoResposta item)
+        public async Task<int> Add(BancoResposta item)
         {
             // mapear o ViewModel para a Classe do Dominio
             //***********************************************************************************************
@@ -80,19 +73,19 @@ namespace BancosAPI.Servico.Servicos
 
             // usar o repositorio para realizar a operação
             //***********************************************************************************************
-            return _bancoRepository.Add(mapBanco);
+            return await _bancoRepository.Add(mapBanco);
         }
 
-        public int Delete(string codigo)
+        public async Task<int> Delete(string codigo)
         {
             var result = _bancoRepository.GetID(codigo).Result;
 
             // usar o repositorio para realizar a operação
             //***********************************************************************************************
-            return _bancoRepository.Delete(result);
+            return await _bancoRepository.Delete(result);
         }
 
-        public int Update(BancoResposta item)
+        public async Task<int> Update(BancoResposta item)
         {
             // mapear o ViewModel para a Classe do Dominio
             //***********************************************************************************************
@@ -100,14 +93,14 @@ namespace BancosAPI.Servico.Servicos
 
             // usar o repositorio para realizar a operação
             //***********************************************************************************************
-            return _bancoRepository.Update(mapBanco);
+            return await _bancoRepository.Update(mapBanco);
         }
 
-        public bool ExistID(string codigo)
+        public async Task<bool> ExistID(string codigo)
         {
             // usar o repositorio para realizar a operação
             //***********************************************************************************************
-            return _bancoRepository.ExistID(codigo);
+            return await _bancoRepository.ExistID(codigo);
 
         }
 

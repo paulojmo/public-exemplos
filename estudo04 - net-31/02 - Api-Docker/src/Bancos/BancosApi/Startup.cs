@@ -42,10 +42,21 @@ namespace BancosAPI
             
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BancoAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                        Title = "BancoAPI", 
+                        Version = "v1" ,
+                        Description = "api no .Net Core 3",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "PJ OLIVEIRA",
+                            Url = new Uri("https://github.com/pjoliveira"),
+                        }
+                });
 
             });
 
+            //services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -68,10 +68,10 @@ namespace BancosAPI.Infra.Data.Repositorios
 
         }
 
-        public bool ExistID(string id)
+        public async Task<bool> ExistID(string id)
         {
 
-            return _contexto.Bancos.Any(e => e.ID == id);
+            return await _contexto.Bancos.AnyAsync(e => e.ID == id);
 
         }
 
@@ -82,27 +82,27 @@ namespace BancosAPI.Infra.Data.Repositorios
 
         }
 
-        public int Add(BancoEntidade item)
+        public async Task<int> Add(BancoEntidade item)
         {
 
             _contexto.Add(item);
-            return _contexto.SaveChanges();
+            return await _contexto.SaveChangesAsync();
 
         }
 
-        public int Delete(BancoEntidade item)
+        public async Task<int> Delete(BancoEntidade item)
         {
 
             _contexto.Remove(item);
-            return _contexto.SaveChanges();
+            return await _contexto.SaveChangesAsync();
 
         }
 
-        public int Update(BancoEntidade item)
+        public async Task<int> Update(BancoEntidade item)
         {
 
             _contexto.Update(item);
-            return _contexto.SaveChanges();
+            return await _contexto.SaveChangesAsync();
 
         }
     }

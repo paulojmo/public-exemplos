@@ -33,25 +33,25 @@ namespace BancosAPI.Dominio.Interfaces
         /// Metodo para verificar se ja exsite o ID
         /// </summary>
         /// <returns>Dados da ID correpondente</returns>
-        bool ExistID(string id);
+        Task<bool> ExistID(string id);
 
         /// <summary>
         /// Metodo adcionar registros
         /// </summary>
         /// <returns>inteiro </returns>
-        int Add(BancoEntidade item);
+        Task<int> Add(BancoEntidade item);
 
         /// <summary>
         /// Metodo de update de registros
         /// </summary>
         /// <returns>inteiro </returns>
-        int Update(BancoEntidade item);
+        Task<int> Update(BancoEntidade item);
 
         /// <summary>
         /// Metodo para deletar registros
         /// </summary>
         /// <returns>inteiro </returns>
-        int Delete(BancoEntidade item);
+        Task<int> Delete(BancoEntidade item);
 
     }
 }
