@@ -1,16 +1,11 @@
 using BancosAPI.Infra.IC.InversaoDeControle;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BancosAPI
 {
@@ -28,14 +23,14 @@ namespace BancosAPI
         {
             // metodo de extensão criado na classe DependencyInjection
             //***********************************************************************************
-            services.AddConnection(Configuration);
-            services.AddRespositorios();
-            services.AddServicos();
+            services.AddConnection();
+            //services.AddRespositorios();
+            //services.AddServicos();
             //
 
             // metodo de extensão criado na classe AutoMapperConfig do Sistema.MVC
             //***********************************************************************************
-            services.AddAutoMapperConfig();
+            //services.AddAutoMapperConfig();
             //
 
             services.AddControllers();
@@ -46,7 +41,7 @@ namespace BancosAPI
                 { 
                         Title = "BancoAPI", 
                         Version = "v1" ,
-                        Description = "api no .Net Core 3",
+                        Description = "api no .Net Core 3 e MongoDB",
                         Contact = new OpenApiContact
                         {
                             Name = "PJ OLIVEIRA",

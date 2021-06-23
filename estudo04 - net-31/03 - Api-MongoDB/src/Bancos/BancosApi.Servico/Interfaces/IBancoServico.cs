@@ -10,12 +10,13 @@ namespace BancosAPI.Servico.Interfaces
     /// </summary>
     public interface IBancoServico
     {
+        
         /// <summary>
         /// Metodo para Lista dos dados
         /// </summary>
         /// <returns>Lista com os dados</returns>
         Task<IEnumerable<BancoResposta>> GetLista();    
-
+        /*
         /// <summary>
         /// Metodo para verificar se existe o ID
         /// </summary>
@@ -45,6 +46,6 @@ namespace BancosAPI.Servico.Interfaces
         /// </summary>
         /// <returns>inteiro </returns>
         Task<int> Delete(string codigo);
-
+        */
     }
 }

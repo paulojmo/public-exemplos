@@ -36,7 +36,7 @@ namespace BancosAPI.Servico.Servicos
             _mapper = mapper;
 
         }
-
+        
         /// <summary>
         /// retorna a lista de bancos
         /// </summary>
@@ -52,7 +52,7 @@ namespace BancosAPI.Servico.Servicos
         }
 
    
-
+        /*
         public async Task<BancoResposta> GetID(string codigo)
         {
             // usar o repositorio para realizar a operação
@@ -103,7 +103,7 @@ namespace BancosAPI.Servico.Servicos
             return await _bancoRepository.ExistID(codigo);
 
         }
-
+        */
 
     }
 }

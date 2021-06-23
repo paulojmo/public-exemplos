@@ -24,7 +24,7 @@ namespace BancosAPI.Controllers
             //***********************************************************************************
             _servico = appServico;
         }        
-
+        
         [HttpGet]
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> GetTodos()
@@ -33,6 +33,7 @@ namespace BancosAPI.Controllers
             return Ok(list);
         }
 
+        /*
         [HttpGet("{id:long}")]
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> GetPorId([FromRoute] string id)
@@ -61,5 +62,6 @@ namespace BancosAPI.Controllers
 
             return Ok(resultado);
         }
+        */
     }
 }

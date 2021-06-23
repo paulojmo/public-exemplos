@@ -10,13 +10,13 @@ namespace BancosAPI.Dominio.Interfaces
     public interface IBancoRepositorio 
     {
 
-
+        
         /// <summary>
         /// Metodo para Lista dos dados
         /// </summary>
         /// <returns>Lista com os dados</returns>
         Task<IEnumerable<BancoEntidade>> GetLista();
-
+        /*
         /// <summary>
         /// Metodo para Lista dos dados com opção de filtrar
         /// </summary>
@@ -52,6 +52,6 @@ namespace BancosAPI.Dominio.Interfaces
         /// </summary>
         /// <returns>inteiro </returns>
         Task<int> Delete(BancoEntidade item);
-
+        */
     }
 }

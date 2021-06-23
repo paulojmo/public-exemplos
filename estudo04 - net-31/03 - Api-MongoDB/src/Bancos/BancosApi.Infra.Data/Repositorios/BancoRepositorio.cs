@@ -1,10 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using BancosAPI.Dominio.Entidades;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BancosAPI.Dominio.Entidades;
 using BancosAPI.Dominio.Interfaces;
 using BancosAPI.Infra.Data.Contexto;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BancosAPI.Infra.Data.Repositorios
 {
@@ -13,21 +11,29 @@ namespace BancosAPI.Infra.Data.Repositorios
     /// </summary>
     public class BancoRepositorio : IBancoRepositorio
     {
-        private SistemaDbContexto _contexto;
-        public BancoRepositorio(SistemaDbContexto contexto)
+        private SistemaContexto _contexto;
+        public BancoRepositorio(SistemaContexto contexto)
         {
 
             _contexto = contexto;
 
         }
 
-        public async Task<IEnumerable<BancoEntidade>> GetLista()
+        public Task<IEnumerable<BancoEntidade>> GetLista()
         {
-
-            return await _contexto.Bancos.ToListAsync();
-
+            throw new System.NotImplementedException();
         }
 
+        //public Task<IEnumerable<BancoEntidade>> GetLista()
+        //{
+
+        //   return _contexto.Bancos.Find(_ => true).ToListAsync();
+
+        //}
+
+
+
+        /*
         public async Task<IEnumerable<BancoEntidade>> GetLista(string CampoParaFiltro, string ValorParaFiltro)
         {
             string cValor = ValorParaFiltro;
@@ -105,6 +111,7 @@ namespace BancosAPI.Infra.Data.Repositorios
             return await _contexto.SaveChangesAsync();
 
         }
+        */
     }
 
 }

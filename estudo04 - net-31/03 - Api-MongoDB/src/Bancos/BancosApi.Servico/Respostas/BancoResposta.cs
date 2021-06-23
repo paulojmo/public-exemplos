@@ -1,5 +1,5 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace BancosAPI.Servico.Respostas
 {
@@ -11,7 +11,8 @@ namespace BancosAPI.Servico.Respostas
     /// </summary>
     public class BancoResposta
     {
-
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string ID { get; set; }
 
         public string Nome { get; set; }
