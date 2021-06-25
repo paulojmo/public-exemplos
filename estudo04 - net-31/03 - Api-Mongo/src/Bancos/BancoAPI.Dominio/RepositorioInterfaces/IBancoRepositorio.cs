@@ -16,40 +16,47 @@ namespace BancoAPI.Dominio.RepositorioInterfaces
         Task<IEnumerable<BancoEntidade>> GetLista();
         
         /// <summary>
-        /// Metodo para Lista dos dados com opção de filtrar
-        /// </summary>
-        /// <returns>Lista com os dados</returns>
-        //Task<IEnumerable<BancoEntidade>> GetLista(string CampoParaFiltro, string ValorParaFiltro);
-
-        /// <summary>
         /// Metodo para buscar por ID
         /// </summary>
         /// <returns>Dados da ID correpondente</returns>
-        Task<BancoEntidade> GetID(string id);
-        /*
+        Task<BancoEntidade> GetId(string id);
+
+        /// <summary>
+        /// Metodo para buscar por codigo
+        /// </summary>
+        /// <returns>Dados da codigo correpondente</returns>
+        Task<BancoEntidade> GetCodigo(string codigo);
+
+        /// <summary>
+        /// Metodo para buscar por codigo
+        /// </summary>
+        /// <returns>Dados da codigo correpondente</returns>
+        Task<BancoEntidade> GetNome(string nome);
+
         /// <summary>
         /// Metodo para verificar se ja exsite o ID
         /// </summary>
         /// <returns>Dados da ID correpondente</returns>
-        Task<bool> ExistID(string id);
+        Task<bool> ExisteCodigo(string codigo);
 
         /// <summary>
         /// Metodo adcionar registros
         /// </summary>
         /// <returns>inteiro </returns>
-        Task<int> Add(BancoEntidade item);
+        Task Add(BancoEntidade item);
 
         /// <summary>
         /// Metodo de update de registros
         /// </summary>
         /// <returns>inteiro </returns>
-        Task<int> Update(BancoEntidade item);
+        Task<long> Update(BancoEntidade item);
 
         /// <summary>
         /// Metodo para deletar registros
         /// </summary>
         /// <returns>inteiro </returns>
-        Task<int> Delete(BancoEntidade item);
-        */
+        Task<long> Delete(string id); 
+
+
     }
 }

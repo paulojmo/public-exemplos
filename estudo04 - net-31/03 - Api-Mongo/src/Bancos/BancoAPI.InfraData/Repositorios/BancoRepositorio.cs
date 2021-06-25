@@ -29,86 +29,62 @@ namespace BancoAPI.InfraData.Repositorios
             return list;
         }
 
-        /*
-        public async Task<IEnumerable<BancoEntidade>> GetLista(string CampoParaFiltro, string ValorParaFiltro)
-        {
-            string cValor = ValorParaFiltro;
-
-            //quando o ValorParaFiltro estiver VAZIO o CampoParaFiltro tambem deve ser vazio.
-            //*************************************************************************************
-            string cFiltro = !string.IsNullOrEmpty(ValorParaFiltro) ? CampoParaFiltro : string.Empty;
-
-            //criar uma queryList para consulta.
-            //***********************************************************
-            IEnumerable<BancoEntidade> QueryList;
-
-            //verifica as opções para filtro...
-            //***********************************************************
-            switch (cFiltro)
-            {
-                case "ID": //ID                    
-                    QueryList = await _contexto.Bancos.Where(s => s.ID.Contains(cValor)).OrderBy(s => s.ID).ToListAsync();
-
-                    break;
-                case "Nome": //Nome
-                    QueryList = await _contexto.Bancos.Where(s => s.Nome.Contains(cValor)).OrderBy(s => s.Nome).ToListAsync();
-                    //queryList = queryList.Where(s => s.Nome.Contains(buscaParam) || s.Fantasia.Contains(buscaParam));
-
-                    break;
-                case "Fantasia": //Fantasia
-                    QueryList = await _contexto.Bancos.Where(s => s.Fantasia.Contains(cValor)).OrderBy(s => s.Fantasia).ToListAsync();
-
-                    break;
-                default: //lista todos os registros.
-                    QueryList = await _contexto.Bancos.Where(s => s.EmpresaID != "00").OrderBy(s => s.Nome).ToListAsync();
-
-                    break;
-            }
-
-            //return await _contexto.Bancos.ToListAsync();
-            return QueryList;
-
-        }
-        
-        public async Task<bool> ExistID(string id)
+        public async Task<BancoEntidade> GetId(string id)
         {
 
-            return await _contexto.Bancos.AnyAsync(e => e.ID == id);
+            return await _contexto.BancoColecao.Find(b => b.Id == id).FirstOrDefaultAsync();
 
         }
-        */
-        public async Task<BancoEntidade> GetID(string codigo)
+
+        public async Task<BancoEntidade> GetCodigo(string codigo)
         {
 
             return await _contexto.BancoColecao.Find(b => b.Codigo == codigo).FirstOrDefaultAsync();
 
         }
 
-        /*
-        public async Task<int> Add(BancoEntidade item)
+        public async Task<BancoEntidade> GetNome(string nome)
         {
 
-            _contexto.Add(item);
-            return await _contexto.SaveChangesAsync();
+            FilterDefinition<BancoEntidade> filter = Builders<BancoEntidade>.Filter.Eq(p => p.Nome, nome);
+            return await _contexto.BancoColecao.Find(filter).FirstOrDefaultAsync();
 
         }
 
-        public async Task<int> Delete(BancoEntidade item)
+        public async Task<bool> ExisteCodigo(string codigo)
         {
 
-            _contexto.Remove(item);
-            return await _contexto.SaveChangesAsync();
+            return await _contexto.BancoColecao.Find(b => b.Codigo == codigo).AnyAsync();
 
         }
 
-        public async Task<int> Update(BancoEntidade item)
+        public async Task Add(BancoEntidade item)
         {
+            
+            await _contexto.BancoColecao.InsertOneAsync(item);
 
-            _contexto.Update(item);
-            return await _contexto.SaveChangesAsync();
 
         }
-        */
+        public async Task<long> Update(BancoEntidade item)
+        {
+
+            ReplaceOneResult updateResult = await _contexto.BancoColecao.ReplaceOneAsync(filter: g => g.Id == item.Id, replacement: item);           
+            return updateResult.ModifiedCount;
+
+        }
+
+        public async Task<long> Delete(string id)
+        {
+            
+            FilterDefinition<BancoEntidade> filter = Builders<BancoEntidade>.Filter.Eq(p => p.Id, id);
+            DeleteResult deleteResult = await _contexto.BancoColecao.DeleteOneAsync(filter);
+            
+            return deleteResult.DeletedCount;
+
+        }
+
+       
+        
     }
 
 }

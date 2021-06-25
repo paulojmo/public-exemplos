@@ -22,16 +22,11 @@ namespace BancoAPI.Servico.Servicos
         /// <summary>
         /// contrutor da classe BancoService
         /// </summary>
-        public BancoServico(/*IMapper mapper,*/ IBancoRepositorio bancoRepository)
+        public BancoServico(IBancoRepositorio bancoRepository)
         {
             // injeção de dependencia do repositorio
             //***********************************************************************************************
             _bancoRepository = bancoRepository;
-
-            // injeção de dependencia do autoMapper
-            // utilizado para mapear as classe do dominio para as classes viewModel
-            //***********************************************************************************************
-            //_mapper = mapper;
 
         }
 
@@ -52,11 +47,11 @@ namespace BancoAPI.Servico.Servicos
 
 
         
-        public async Task<BancoEntidade> GetID(string codigo)
+        public async Task<BancoEntidade> GetId(string id)
         {
             // usar o repositorio para realizar a operação
             //***********************************************************************************************
-            var result = await _bancoRepository.GetID(codigo);
+            var result = await _bancoRepository.GetId(id);
 
             // mapear o RESULT para a ViewModel 
             //***********************************************************************************************
@@ -64,46 +59,65 @@ namespace BancoAPI.Servico.Servicos
             return result; 
 
         }
-        /*
-        public async Task<int> Add(BancoResposta item)
-        {
-            // mapear o ViewModel para a Classe do Dominio
-            //***********************************************************************************************
-            var mapBanco = _mapper.Map<BancoEntidade>(item);
 
-            // usar o repositorio para realizar a operação
-            //***********************************************************************************************
-            return await _bancoRepository.Add(mapBanco);
-        }
-
-        public async Task<int> Delete(string codigo)
-        {
-            var result = _bancoRepository.GetID(codigo).Result;
-
-            // usar o repositorio para realizar a operação
-            //***********************************************************************************************
-            return await _bancoRepository.Delete(result);
-        }
-
-        public async Task<int> Update(BancoResposta item)
-        {
-            // mapear o ViewModel para a Classe do Dominio
-            //***********************************************************************************************
-            var mapBanco = _mapper.Map<BancoEntidade>(item);
-
-            // usar o repositorio para realizar a operação
-            //***********************************************************************************************
-            return await _bancoRepository.Update(mapBanco);
-        }
-
-        public async Task<bool> ExistID(string codigo)
+        public async Task<BancoEntidade> GetCodigo(string codigo)
         {
             // usar o repositorio para realizar a operação
             //***********************************************************************************************
-            return await _bancoRepository.ExistID(codigo);
+            var result = await _bancoRepository.GetCodigo(codigo);
+
+            // mapear o RESULT para a ViewModel 
+            //***********************************************************************************************
+            //return _mapper.Map<BancoResposta>(result);
+            return result;
 
         }
-        */
+
+        public async Task<BancoEntidade> GetNome(string nome)
+        {
+            // usar o repositorio para realizar a operação
+            //***********************************************************************************************
+            var result = await _bancoRepository.GetNome(nome);
+
+            // mapear o RESULT para a ViewModel 
+            //***********************************************************************************************
+            //return _mapper.Map<BancoResposta>(result);
+            return result;
+
+        }
+
+        public async Task Add(BancoEntidade item)
+        {
+            
+            // usar o repositorio para realizar a operação
+            //***********************************************************************************************
+            await _bancoRepository.Add(item);
+        }
+
+        
+
+        public async Task<long> Update(BancoEntidade item)
+        {
+        
+            // usar o repositorio para realizar a operação
+            //***********************************************************************************************
+            return await _bancoRepository.Update(item);
+        }
+
+        public async Task<bool> ExisteCodigo(string codigo)
+        {
+            // usar o repositorio para realizar a operação
+            //***********************************************************************************************
+            return await _bancoRepository.ExisteCodigo(codigo);
+
+        }
+
+        public async Task<long> Delete(string id)
+        {
+            // usar o repositorio para realizar a operação
+            //***********************************************************************************************
+            return await _bancoRepository.Delete(id);
+        }
 
     }
 }

@@ -20,32 +20,43 @@ namespace BancoAPI.Servico.Interfaces
         /// Metodo para buscar por ID
         /// </summary>
         /// <returns>Dados da ID correpondente</returns>
-        Task<BancoEntidade> GetID(string codigo);
+        Task<BancoEntidade> GetId(string id);
 
-        /*
+        /// <summary>
+        /// Metodo para buscar por ID
+        /// </summary>
+        /// <returns>Dados da ID correpondente</returns>
+        Task<BancoEntidade> GetCodigo(string codigo);
+
+        /// <summary>
+        /// Metodo para buscar por nome
+        /// </summary>
+        /// <returns>Dados da ID correpondente</returns>
+        Task<BancoEntidade> GetNome(string nome);
+        
         /// <summary>
         /// Metodo para verificar se existe o ID
         /// </summary>
         /// <returns>True ou False</returns>
-        Task<bool> ExistID(string codigo);     
+        Task<bool> ExisteCodigo(string codigo);     
 
         /// <summary>
         /// Metodo adcionar registros
         /// </summary>
         /// <returns>inteiro </returns>
-        Task<int> Add(BancoResposta item);
+        Task Add(BancoEntidade item);
 
         /// <summary>
         /// Metodo de update de registros
         /// </summary>
         /// <returns>inteiro </returns>
-        Task<int> Update(BancoResposta item);
+        Task<long> Update(BancoEntidade item);
 
         /// <summary>
         /// Metodo para deletar registros
         /// </summary>
         /// <returns>inteiro </returns>
-        Task<int> Delete(string codigo);
-        */
+        Task<long> Delete(string codigo);
+        
     }
 }
